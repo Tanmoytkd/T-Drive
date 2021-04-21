@@ -95,7 +95,7 @@ cd $HOME/fabric-samples/t-drive/application-javascript
 npm install
 ```
 
-## Starting Blockchain Test Netword and Install T-Drive Chaincode
+## Starting Blockchain Test Network and Install T-Drive Chaincode
 
 ```bash
 cd $HOME/fabric-samples/test-network
@@ -126,5 +126,13 @@ You can test the API with the **REST CLIENT** vs code extension. The tests are w
 
 You can view the current state at [http://localhost:5984/_utils/](http://localhost:5984/_utils/).
 
-**Username: ** admin
-**Password: ** adminpw
+**Username:** admin  
+**Password:** adminpw
+
+## Stopping Test Network
+
+```bash
+cd $HOME/fabric-samples/test-network
+
+./network.sh down
+```
