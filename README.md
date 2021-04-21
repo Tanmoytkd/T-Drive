@@ -91,7 +91,7 @@ git clone https://github.com/Tanmoytkd/T-Drive t-drive
 cd $HOME/fabric-samples/t-drive/chaincode-javascript
 npm install
 
-cd $HOME/fabric-samples/t-drive/application-javascript
+cd $HOME/fabric-samples/t-drive/api-javascript
 npm install
 ```
 
@@ -104,7 +104,7 @@ cd $HOME/fabric-samples/test-network
 ./network.sh createChannel -ca -c mychannel -s couchdb
 
 # Deleting the existing wallet from previous test network
-rm -rf $HOME/fabric-samples/t-drive/application-javascript/wallet
+rm -rf $HOME/fabric-samples/t-drive/api-javascript/wallet
 
 # Install Chaincode
 ./network.sh deployCC -ccn tdrive -ccp /home/tanmoy.das/fabric-samples/t-drive/chaincode-javascript/ -ccl javascript
@@ -113,7 +113,7 @@ rm -rf $HOME/fabric-samples/t-drive/application-javascript/wallet
 ## Starting T-Drive API
 
 ```bash
-cd $HOME/fabric-samples/t-drive/application-javascript
+cd $HOME/fabric-samples/t-drive/api-javascript
 
 npm install
 

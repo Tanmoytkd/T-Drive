@@ -402,34 +402,6 @@ async function main() {
 				}
 			})
 
-			// let result = await contract.evaluateTransaction('ChangeFileName', 'file_cert.txt_hash123', 'cert_new.txt');
-			// 	await contract.submitTransaction('ChangeFileName', 'file_cert.txt_hash123', 'cert_new.txt');
-
-			/**
-			try {
-				let result = await contract.evaluateTransaction(
-					'FindFile',
-					'file_cert.txt_hash123',
-				);
-
-				console.log(`File Found\n Result: ${result}\n`);
-			} catch (error) {
-				console.log(`*** Error: \n    ${error}\n`);
-			}
-			 */
-
-			// try {
-			// 	const email = 'tkd@gmail.com'
-			// 	let result = await contract.evaluateTransaction(
-			// 		'FindFileByUser',
-			// 		email,
-			// 	);
-
-			// 	console.log(`Files Found for email ${email}: \n ${result}\n`);
-			// } catch (error) {
-			// 	console.log(`*** Error: \n    ${error}\n`);
-			// }
-
 			var server = app.listen(PORT, function () {
 				console.log(`Server Listening on port http://localhost:${PORT}`);
 			});
