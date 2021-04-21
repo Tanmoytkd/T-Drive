@@ -108,6 +108,29 @@ async function main() {
 				}
 			})
 
+			app.get('/profile', async function (req, res) {
+				if (req.cookies.user == null) {
+					res.json({
+						isLoggedIn: false
+					});
+					return;
+				}
+
+				try {
+					let user = JSON.parse(req.cookies.user.toString());
+					const key = user.Key;
+
+					let result = await contract.evaluateTransaction('FindUserByKey', key);
+
+					user = JSON.parse(result.toString());
+					user.isLoggedIn = true;
+
+					res.json(user);
+				} catch (error) {
+					res.status(500).send(`Error: ${error}`);
+				}
+			})
+
 			async function sha256(filePath) {
 				const readFile = util.promisify(fs.readFile);
 

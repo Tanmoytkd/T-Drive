@@ -36,7 +36,9 @@ class TDrive extends Contract {
             throw new Error('Email and Password do not match any user in our system');
         }
 
-        return userJSON.toString();
+        user.Password = 'SECRET';
+
+        return JSON.stringify(user);
     }
 
     async CreateFile(ctx, key, name, downloadLink, fileHash, uploaderEmail) {
@@ -51,6 +53,18 @@ class TDrive extends Contract {
 
         await ctx.stub.putState(key, Buffer.from(JSON.stringify(file)));
         return JSON.stringify(file);
+    }
+
+    async FindUserByKey(ctx, key) {
+        const userJSON = await ctx.stub.getState(key); // get the asset from chaincode state
+        if (!userJSON || userJSON.length === 0) {
+            throw new Error('The file does not exist');
+        }
+
+        let user = JSON.parse(userJSON.toString());
+        user.Password = 'SECRET';
+
+        return JSON.stringify(user);
     }
 
     async FindFile(ctx, key) {
