@@ -1,7 +1,7 @@
 {
-    "name": "asset-transfer-basic",
+    "name": "t-drive",
     "version": "1.0.0",
-    "description": "Asset-transfer-basic application implemented in JavaScript",
+    "description": "Google Drive clone using Hyperledger Fabric",
     "engines": {
         "node": ">=12",
         "npm": ">=5"
