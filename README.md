@@ -107,7 +107,7 @@ cd $HOME/fabric-samples/test-network
 rm -rf $HOME/fabric-samples/t-drive/api-javascript/wallet
 
 # Install Chaincode
-./network.sh deployCC -ccn tdrive -ccp /home/tanmoy.das/fabric-samples/t-drive/chaincode-javascript/ -ccl javascript
+./network.sh deployCC -ccn tdrive -ccp $HOME/fabric-samples/t-drive/chaincode-javascript/ -ccl javascript
 ```
 
 ## Starting T-Drive API
