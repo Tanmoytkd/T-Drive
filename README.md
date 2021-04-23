@@ -101,7 +101,7 @@ npm install
 cd $HOME/fabric-samples/test-network
 
 # Start Test Network
-./network.sh createChannel -ca -c mychannel -s couchdb
+./network.sh down && ./network.sh createChannel -ca -c mychannel -s couchdb
 
 # Deleting the existing wallet from previous test network
 rm -rf $HOME/fabric-samples/t-drive/api-javascript/wallet
